@@ -1,0 +1,17 @@
+template<class T=int>
+inline T read() {
+    T num = 0;
+    int neg = 1;
+    char c = getchar_unlocked();
+    while (!isdigit(c) and c != '-') {
+        c = getchar_unlocked();
+    } 
+    if (c == '-') neg = -1;
+    else num = c-'0';
+    c = getchar_unlocked();
+    while (isdigit(c)) {
+        num = (num<<1)+(num<<3)+(c^48);
+        c = getchar_unlocked();
+    }
+    return num*neg;
+}
