@@ -1,0 +1,5 @@
+mint lucas(ll n, ll k) {
+  if (n == 0 && k == 0) return 1;
+  mint res = comb(n%mod, k%mod);
+  return res*lucas(n/mod, k/mod);
+}
